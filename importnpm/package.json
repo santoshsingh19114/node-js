@@ -1,0 +1,16 @@
+{
+  "name": "importnpm",
+  "version": "1.0.0",
+  "description": "for learning node js from thapa tech",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "santosh",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "validator": "^13.11.0"
+  }
+}
