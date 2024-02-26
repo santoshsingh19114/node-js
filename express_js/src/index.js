@@ -7,8 +7,24 @@ const app =express();
 // console.log(path.join(__dirname,'../public'));
 const staticPath=path.join(__dirname,'../public');
 
+
+app.set("view engine","hbs"); //handlebars is the templating engine
+
+
+
+
 //built-in middleware
-app.use(express.static(staticPath));
+// app.use(express.static(staticPath));
+
+
+
+
+//template engine route   
+
+app.get("/",(req,res)=>{
+    res.render('index',
+    {channelName:"santosh"})
+});
 
 // app.get(route,callback)
 app.get("/",(req,res)=>{
