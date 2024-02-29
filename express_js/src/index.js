@@ -1,15 +1,16 @@
 var express =require ("express");
 const path= require("path")
 const app =express();
-
+const hbs =require("hbs");
 
 // console.log(__dirname);
 // console.log(path.join(__dirname,'../public'));
 const staticPath=path.join(__dirname,'../public');
-const templatepath=path.join(__dirname,'../templates')
-
+const templatepath=path.join(__dirname,'../templates/views')
+const partialspath=path.join(__dirname,"../templates/partials")
 app.set("view engine","hbs"); //handlebars is the templating engine
-app.set("views",templatepath);
+app.set("views",templatepath);  
+hbs.registerPartials(partialspath)  //to register all handlebar files in templates folder
 
 
 
@@ -31,8 +32,15 @@ app.get("/about",(req,res)=>{
 });
 
 // app.get(route,callback)
-app.get("/",(req,res)=>{
-    res.send("Hello from the express");
+app.get("/about/*",(req,res)=>{
+    res.render("404",{
+        errorcomment:"oops about us page couldn't be found !"
+    });
+})
+app.get("*",(req,res)=>{
+    res.render("404",{
+        errorcomment:"oops page couldn't be found !"
+    });
 })
 
 
