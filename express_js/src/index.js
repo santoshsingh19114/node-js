@@ -14,7 +14,7 @@ hbs.registerPartials(partialspath)  //to register all handlebar files in templat
 
 
 
-//built-in middleware
+//built-in middleware  software that allows applications to connect to a network and manage data transfer between systems.
 app.use(express.static(staticPath));
 
 
