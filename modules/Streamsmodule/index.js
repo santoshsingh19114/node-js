@@ -64,7 +64,7 @@ server.on("request",(req,res)=>{
     // 3rd way   // best way 
 
     const rstream =fs.createReadStream("input.txt");
-    rstream.pipe(res);
+    rstream.pipe(res);   //this method is used to take a redable stream and connect it with the the writable stream
 })
 server.listen(8000,"127.0.0.1");
 
